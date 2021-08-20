@@ -12,6 +12,5 @@ dependencies {
     api project(":securityprovider")
     api project(':covpass-sdk')
     androidUI()
-    inAppUpdate()
     zxing()
 }

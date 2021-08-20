@@ -1,3 +1,37 @@
+# FOSS fork
+
+## Changes
+
+* Removed proprietary dependencies.
+* Use `eu.ehn.dcc.certlogic:certlogic-kotlin:latest` from `mavenLocal()`.
+
+# TODO
+
+* Provide triple-t metadata for F-Droid.
+
+## How to build certlogic for mavenLocal()
+
+```sh
+$ TAG=v0.7.7-kotlin   # as of v-1.82.0
+$ git clone -b $TAG https://github.com/ehn-dcc-development/dgc-business-rules.git
+$ cd dgc-business-rules/certlogic/certlogic-kotlin
+$ mvn clean install
+```
+
+## How to calculate the version code
+
+```sh
+$ echo $(($(git rev-list --count HEAD) + 80))
+```
+
+## How to set the version code before building
+
+```sh
+$ echo versionCode=$VERCODE >> generated.properties
+```
+
+---
+
 # android-covpass-app
 
 This repo contains the CovPass app and commonly needed modules for Kotlin + Android.
