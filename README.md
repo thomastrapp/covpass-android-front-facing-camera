@@ -1,5 +1,8 @@
 # FOSS fork
 
+NB: it's not really a "fork", just a few patches for F-Droid, no other
+divergence from upstream.
+
 ## Changes
 
 * Removed proprietary dependencies.
@@ -26,8 +29,6 @@ $ echo $(($(git rev-list --count HEAD) + 80))
 ```sh
 $ echo versionCode=$VERCODE >> generated.properties
 ```
-
----
 
 # android-covpass-app
 
