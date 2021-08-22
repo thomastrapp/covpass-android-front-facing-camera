@@ -3,6 +3,10 @@
 NB: it's not really a "fork", just a few patches for F-Droid, no other
 divergence from upstream.
 
+## Upstream repo
+
+https://github.com/Digitaler-Impfnachweis/covpass-android
+
 ## Changes
 
 * Removed proprietary dependencies.
