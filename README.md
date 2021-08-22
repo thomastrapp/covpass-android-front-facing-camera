@@ -4,9 +4,6 @@
 
 * Removed proprietary dependencies.
 * Use `eu.ehn.dcc.certlogic:certlogic-kotlin:latest` from `mavenLocal()`.
-
-# TODO
-
 * Provide triple-t metadata for F-Droid.
 
 ## How to build certlogic for mavenLocal()
