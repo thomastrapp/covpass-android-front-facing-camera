@@ -7,6 +7,10 @@ divergence from upstream.
 
 https://github.com/Digitaler-Impfnachweis/covpass-android
 
+## Matrix room
+
+https://matrix.to/#/#covpass-android-foss:matrix.org
+
 ## Changes
 
 * Removed proprietary dependencies (update check using gplay).
