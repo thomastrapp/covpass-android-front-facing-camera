@@ -1,17 +1,26 @@
-# FOSS fork
+# FOSS version
 
 NB: it's not really a "fork", just a few patches for F-Droid, no other
 divergence from upstream.
 
-## Upstream repo
+## Upstream repo & issue tracker
 
 https://github.com/Digitaler-Impfnachweis/covpass-android
 
 ## Changes
 
-* Removed proprietary dependencies.
+* Removed proprietary dependencies (update check using gplay).
 * Use `eu.ehn.dcc.certlogic:certlogic-kotlin:latest` from `mavenLocal()`.
 * Provide triple-t metadata for F-Droid.
+
+## Branches & Updates
+
+The FOSS version adds the `foss` branch: upstream's `main` + the
+changes mentioned above.
+
+When upstream releases a new version, we merge `main` (or the specific
+version tag) into `foss` and tag the new patched version as
+`foss-v-$VERSION` (matching upstream's `v-$VERSION`).
 
 ## How to build certlogic for mavenLocal()
 
