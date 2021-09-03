@@ -3,6 +3,14 @@
 NB: it's not really a "fork", just a few patches for F-Droid, no other
 divergence from upstream.
 
+## CovPass
+
+<a href="https://f-droid.org/packages/de.rki.covpass.app/"><img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="62" /></a>
+
+## CovPassCheck
+
+<a href="https://f-droid.org/packages/de.rki.covpass.checkapp/"><img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="62" /></a>
+
 ## Upstream repo & issue tracker
 
 https://github.com/Digitaler-Impfnachweis/covpass-android
