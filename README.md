@@ -37,7 +37,7 @@ version tag) into `foss` and tag the new patched version as
 ## How to build certlogic for mavenLocal()
 
 ```sh
-$ TAG=v0.7.7-kotlin   # as of v-1.82.0
+$ TAG=v0.7.7-kotlin   # as of v-1.86.0
 $ git clone -b $TAG https://github.com/ehn-dcc-development/dgc-business-rules.git
 $ cd dgc-business-rules/certlogic/certlogic-kotlin
 $ mvn clean install
