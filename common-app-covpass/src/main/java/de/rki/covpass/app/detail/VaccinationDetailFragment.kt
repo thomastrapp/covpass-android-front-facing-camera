@@ -14,8 +14,8 @@ import de.rki.covpass.sdk.cert.models.Vaccination
 import de.rki.covpass.sdk.utils.formatDateInternational
 import de.rki.covpass.sdk.utils.formatDateTime
 import kotlinx.parcelize.Parcelize
-import java.time.LocalDateTime
-import java.time.ZoneOffset
+import java.time.ZoneId
+import java.time.ZonedDateTime
 
 @Parcelize
 internal class VaccinationDetailFragmentNav(var certId: String) : FragmentNav(VaccinationDetailFragment::class)
@@ -49,6 +49,10 @@ internal class VaccinationDetailFragment : DgcEntryDetailFragment() {
             DataRow(
                 getString(R.string.vaccination_certificate_detail_view_data_name),
                 cert.fullNameReverse
+            ),
+            DataRow(
+                getString(R.string.vaccination_certificate_detail_view_data_name_standard),
+                cert.fullTransliteratedNameReverse
             ),
             DataRow(
                 getString(R.string.vaccination_certificate_detail_view_data_date_of_birth),
@@ -100,7 +104,7 @@ internal class VaccinationDetailFragment : DgcEntryDetailFragment() {
             getString(R.string.vaccination_certificate_detail_view_data_expiry_date),
             getString(
                 R.string.vaccination_certificate_detail_view_data_expiry_date_message,
-                LocalDateTime.ofInstant(cert.validUntil, ZoneOffset.UTC).formatDateTime()
+                ZonedDateTime.ofInstant(cert.validUntil, ZoneId.systemDefault()).formatDateTime()
             ),
             getString(R.string.vaccination_certificate_detail_view_data_expiry_date_note)
         )

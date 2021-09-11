@@ -48,6 +48,9 @@
 	<string name="certificate_add_popup_action_title">Welchen QR-Code kann ich einscannen?</string>
 	<string name="certificate_add_popup_action_title_linked">#Welchen QR-Code kann ich einscannen?::$0#</string>
 	<string name="certificate_add_popup_scan_button_title">QR-Code scannen</string>
+	<string name="certificate_add_dialog_camera_access_title">Kamerazugriff benötigt</string>
+	<string name="certificate_add_dialog_camera_access_message">Die CovPass-App verwendet die Kamera Ihres Smartphones, um einen QR-Code scannen zu können.\n\nDer Zugriff auf Ihre Kamera erfolgt nur während der Nutzung der App und dann auch nur mit Ihrer Erlaubnis. Sie haben jederzeit die Möglichkeit, in den Einstellungen Ihres Smartphones die Berechtigung zu ändern.</string>
+	<string name="certificate_add_dialog_camera_access_action_button">Zugriff erlauben</string>
 	<string name="error_camera_access_title">Die CovPass-App möchte auf Ihre Kamera zugreifen.</string>
 	<string name="error_camera_access_message">Erlauben Sie den Zugriff, um QR-Codes scannen zu können.</string>
 	<string name="error_camera_access_button_do_not_allow">Nicht Erlauben</string>
@@ -55,6 +58,9 @@
 	<string name="error_test_certificate_not_valid_title">Das Testzertifikat kann nicht hinzugefügt werden</string>
 	<string name="error_test_certificate_not_valid_message">Der von Ihnen gescannte Nachweis für einen Corona-Test weist kein negatives Testergebnis nach. Die aktuelle Version der CovPass-App kann nur negative Corona-Testergebnisse speichern.</string>
 	<string name="error_test_certificate_not_valid_button_title">OK</string>
+	<string name="dialogue_add_booster_vaccination_title">Auffrischungsimpfung hinzugefügt</string>
+	<string name="dialogue_add_booster_vaccination_message">Bitte beachten Sie, dass dieses Zertifikat für die Auffrischungsimpfung gegebenenfalls zum jetzigen Zeitpunkt im Ausland nicht als gültiger Impfnachweis akzeptiert wird. Sofern Sie eine Reise außerhalb Deutschlands planen, nehmen Sie bitte auch den Nachweis für einen erstmals wirksamen Impfschutz oder für eine wirksame Impfung für Genesene mit.</string>
+	<string name="dialogue_add_booster_vaccination_action_button_title">OK</string>
 
 	<!-- SECTION: start Screen: favorite immunization certificate -->
 	<string name="certificate_favorite_button_hint">Als Favorit markieren</string>
@@ -96,6 +102,7 @@
 	<string name="HU">Ungarn</string>
 	<string name="IE">Irland</string>
 	<string name="CH">Schweiz</string>
+	<string name="UA">Ukraine</string>
 	<string name="certificate_check_validity_selection_country_note">Sie finden Ihr Reiseland nicht? In einem mehrstufigen Prozess werden nach und nach mehr Länder verfügbar gemacht. \n\nMehr Informationen finden Sie in den Häufigen Fragen und unter #https://reopen.europa.eu::https://reopen.europa.eu#.</string>
 	<string name="certificate_check_validity_selection_country_action_button">Übernehmen</string>
 	<string name="certificate_check_validity_selection_date">Datum</string>
@@ -163,6 +170,9 @@
 	<string name="error_connect_to_internet_button_ok">OK</string>
 
 	<!-- SECTION: overview certificates -->
+	<string name="booster_vaccination_certificate_overview_title">Auffrischungsimpfung: Aktuell nur in Deutschland nutzbar</string>
+	<string name="booster_vaccination_certificate_overview_message">Auffrischungsimpfungen können derzeit nur in Deutschland digital nachgewiesen und geprüft werden. Sobald sich dies ändert, werden Sie hier über den aktuellen Stand informiert.</string>
+	<string name="booster_vaccination_certificate_overview_action_button_title">Aktuellen QR-Code anzeigen</string>
 	<string name="vaccination_certificate_overview_incomplete_title">Unvollständig: %1$d von %2$d Impfungen</string>
 	<string name="vaccination_certificate_overview_incomplete_message">Ihr Impfschutz ist nicht vollständig. Um den QR-Code als Nachweis für einen kompletten Impfschutz vorzeigen zu können, fügen Sie bitte eine weitere Impfung hinzu.</string>
 	<string name="vaccination_certificate_detail_view_incomplete_action_button_title">Aktuellen QR-Code anzeigen</string>
@@ -189,12 +199,17 @@
 	<string name="certificates_overview_invalid_action_button_title">Neues Zertifikat hinzufügen</string>
 	<string name="certificates_overview_personal_data_title">Persönliche Daten</string>
 	<string name="certificates_overview_personal_data_name">Name, Vorname / Name, first name</string>
+	<string name="certificates_overview_personal_data_standardized_name">Standardisierter Name, Vorname / Standardized name, first name</string>
 	<string name="certificates_overview_personal_data_date_of_birth">Geburtsdatum / Date of birth (YYYY-MM-DD)</string>
 	<string name="certificates_overview_all_certificates_title">EU-Zertifikate</string>
 	<string name="certificates_overview_currently_uses_certificate_note">Aktuell verwendetes Zertifikat</string>
 	<string name="certificates_overview_expires_soon_certificate_note">Zertifikat läuft bald ab</string>
 	<string name="certificates_overview_expired_certificate_note">Zertifikat abgelaufen</string>
 	<string name="certificates_overview_invalid_certificate_note">Zertifikat ungültig</string>
+	<string name="certificates_overview_booster_vaccination_certificate_note">Aktuell nur in DE nutzbar</string>
+	<string name="certificates_overview_booster_vaccination_certificate_title">Impfzertifikat</string>
+	<string name="certificates_overview_booster_vaccination_certificate_message">%s. Auffrischungsimpfung</string>
+	<string name="certificates_overview_booster_vaccination_certificate_date">Geimpft am %s</string>
 	<string name="certificates_overview_vaccination_certificate_title">Impfzertifikat</string>
 	<string name="certificates_overview_vaccination_certificate_message">Impfung %1$d von %2$d</string>
 	<string name="certificates_overview_vaccination_certificate_date">Geimpft am %s</string>
@@ -217,6 +232,7 @@
 	<string name="vaccination_certificate_detail_view_vaccination_headline">Digitales COVID-Impfzertifikat der EU</string>
 	<string name="vaccination_certificate_detail_view_vaccination_note">Es handelt sich hier um einen Impfstoff, bei dem nur eine Impfdosis erforderlich ist, oder um eine Impfung für Genesene, die nur eine Impfdosis benötigt.</string>
 	<string name="vaccination_certificate_detail_view_data_name">Name, Vorname / Name, first name</string>
+	<string name="vaccination_certificate_detail_view_data_name_standard">Standardisierter Name, Vorname / Standardized name, first name</string>
 	<string name="vaccination_certificate_detail_view_data_date_of_birth">Geburtsdatum / Date of birth (YYYY-MM-DD)</string>
 	<string name="vaccination_certificate_detail_view_data_disease">Zielkrankheit oder -erreger / Disease or pathogen</string>
 	<string name="vaccination_certificate_detail_view_data_vaccine">Impfstoff / Vaccine</string>
@@ -241,6 +257,7 @@
 	<string name="test_certificate_detail_view_pcr_test_title">PCR-Test</string>
 	<string name="test_certificate_detail_view_headline">Digitales COVID-Testzertifikat der EU</string>
 	<string name="test_certificate_detail_view_data_name">Name, Vorname / Name, first name</string>
+	<string name="test_certificate_detail_view_data_name_standard">Standardisierter Name, Vorname / Standardized name, first name</string>
 	<string name="test_certificate_detail_view_data_date_of_birth">Geburtsdatum / Date of birth (YYYY-MM-DD)</string>
 	<string name="test_certificate_detail_view_data_disease">Zielkrankheit oder -erreger / Disease or pathogen</string>
 	<string name="test_certificate_detail_view_data_test_type">Art des Tests / Type of test</string>
@@ -253,7 +270,7 @@
 	<string name="test_certificate_detail_view_data_test_issuer">Zertifikataussteller / Certificate issuer</string>
 	<string name="test_certificate_detail_view_data_test_identifier">Zertifikatkennung / Unique certificate identifier</string>
 	<string name="test_certificate_detail_view_data_expiry_date">Technisches Ablaufdatum / Technical expiry date</string>
-	<string name="text_certificate_detail_view_data_expiry_date_message">Gültig bis %s</string>
+	<string name="test_certificate_detail_view_data_expiry_date_message">Gültig bis %s</string>
 	<string name="test_certificate_detail_view_data_expiry_date_note">Bitte bemühen Sie sich rechtzeitig darum, einen neuen digitalen Nachweis ausstellen zu lassen.</string>
 	<string name="test_certificate_detail_view_data_test_note_de">Diese Bescheinigung ist kein Reisedokument. Die wissenschaftlichen Erkenntnisse zu COVID-19 in den Bereichen Impfung, Testung und Genesung entwickeln sich fortlaufend weiter, auch im Hinblick auf neue besorgniserregende Virusvarianten. Bitte informieren Sie sich vor Reiseantritt über die am Zielort geltenden Gesundheitsmaßnahmen und entsprechenden Beschränkungen.\n\nInformationen über die in den jeweiligen EU-Ländern geltenden Einreisebestimmungen finden Sie unter #https://reopen.europa.eu::https://reopen.europa.eu#.</string>
 	<string name="test_certificate_detail_view_data_test_note_en">This certificate is not a travel document. The scientific findings about Covid-19 and vaccination, testing and recovery are continuing to evolve, which includes findings about new, concerning virus variants. \n\nPlease inform yourself about the public-health measures and corresponding restrictions at your travel destination before you travel. You can find information about the travel restrictions applicable in each EU country at #https://reopen.europa.eu::https://reopen.europa.eu#.</string>
@@ -264,6 +281,7 @@
 	<string name="recovery_certificate_detail_view_title">Vollständige Genesung</string>
 	<string name="recovery_certificate_detail_view_headline">Digitales COVID-Genesenenzertifikat der EU</string>
 	<string name="recovery_certificate_detail_view_data_name">Name, Vorname / Name, first name</string>
+	<string name="recovery_certificate_detail_view_data_name_standard">Standardisierter Name, Vorname / Standardized name, first name</string>
 	<string name="recovery_certificate_detail_view_data_date_of_birth">Geburtsdatum / Date of birth (YYYY-MM-DD)</string>
 	<string name="recovery_certificate_detail_view_data_disease">Krankheit oder Erreger, von dem die Bürgerin oder der Bürger genesen ist / Disease or pathogen that this person has recovered from</string>
 	<string name="recovery_certificate_detail_view_data_date_first_positive_result">Datum des ersten positiven Testergebnisses / Date of first positive test result (YYYY-MM-DD)</string>

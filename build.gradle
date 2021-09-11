@@ -14,8 +14,7 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:7.0.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        // FIXME: Once detekt fixes its random NPE we can turn this on again
-//        classpath 'io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.17.1'
+        classpath 'io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.18.0'
         classpath 'pl.allegro.tech.build:axion-release-plugin:1.13.3'
         classpath "org.jetbrains.kotlin:kotlin-serialization:$kotlin_version"
         classpath 'com.jaredsburrows:gradle-license-plugin:0.8.90'
@@ -70,8 +69,6 @@ subprojects {
             androidLibrary(
                 minVersion: 23,
                 kotlinCompilerArgs: [
-                    "-Xopt-in=kotlin.RequiresOptIn",
-                    "-Xopt-in=com.ensody.reactivestate.ExperimentalReactiveStateApi",
                     "-Xopt-in=de.rki.covpass.sdk.utils.ExperimentalHCertApi",
                 ],
                 kotlinExplicitApiMode: kotlinExplicitApiMode
@@ -80,8 +77,6 @@ subprojects {
             apply from: "$rootDir/gradle/common/kotlin-library.gradle"
             kotlinLibrary(
                 kotlinCompilerArgs: [
-                    "-Xopt-in=kotlin.RequiresOptIn",
-                    "-Xopt-in=com.ensody.reactivestate.ExperimentalReactiveStateApi",
                     "-Xopt-in=de.rki.covpass.sdk.utils.ExperimentalHCertApi",
                 ],
                 kotlinExplicitApiMode: kotlinExplicitApiMode
@@ -90,10 +85,8 @@ subprojects {
 
         if (!isThirdPartyProject) {
             apply from: "$rootDir/gradle/common/ktlint.gradle"
+            apply from: "$rootDir/gradle/common/detekt.gradle"
         }
-        // FIXME: Once detekt fixes its random NPE we can turn this on again
-//        apply from: "$rootDir/gradle/common/detekt.gradle"
-        task detekt() {}
 
         if (isAndroidProject) {
             android {
@@ -163,9 +156,8 @@ subprojects {
         task verifyAll(group: 'verification') {
             if (!isThirdPartyProject) {
                 dependsOn 'ktlint'
+                dependsOn 'detekt'
             }
-            // FIXME: Once detekt fixes its random NPE we can turn this on again
-//            dependsOn 'detekt'
             if (isAndroidProject) {
                 dependsOn 'lintDebug'
                 dependsOn 'testDebugUnitTest'

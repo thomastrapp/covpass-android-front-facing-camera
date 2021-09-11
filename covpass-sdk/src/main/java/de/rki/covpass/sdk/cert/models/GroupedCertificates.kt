@@ -27,9 +27,9 @@ public data class GroupedCertificates(
      * @return The primary [CombinedCovCertificate] according to the following priority:
      *
      * #1 Test certificate
-     * Negative PCR Test not older then (=<)48h
+     * Negative PCR Test not older then (=<)72h
      * #2 Test certificate
-     * Negative quick test, not older then (=<) 24 hrs
+     * Negative quick test, not older then (=<) 48 hrs
      * #3 Vaccination certificate
      * Latest vaccination of a vaccination series (1/1, 2/2), older then (>) 14 days
      * #4 Recovery certificate
@@ -41,17 +41,20 @@ public data class GroupedCertificates(
      * #7 Recovery Certificate
      * Recovery after SARS-Cov-2-Infection, older then (>) 180 Days
      * #8 Test certificate
-     * Negative PCR-Test, older then (>) 48 Hrs, or negative quick test older then (>) 24 Hrs
+     * Negative PCR-Test, older then (>) 72 Hrs, or negative quick test older then (>) 48 Hrs
      */
     public fun getMainCertificate(): CombinedCovCertificate {
-        return certificates.find {
+        return getSortedCertificates().find {
             val dgcEntry = it.covCertificate.dgcEntry
             dgcEntry is Test && dgcEntry.type == TestCertType.NEGATIVE_PCR_TEST &&
-                dgcEntry.sampleCollection?.isOlderThan(48) == false
+                dgcEntry.sampleCollection?.isOlderThan(72) == false
         } ?: certificates.find {
             val dgcEntry = it.covCertificate.dgcEntry
             dgcEntry is Test && dgcEntry.type == TestCertType.NEGATIVE_ANTIGEN_TEST &&
-                dgcEntry.sampleCollection?.isOlderThan(24) == false
+                dgcEntry.sampleCollection?.isOlderThan(48) == false
+        } ?: certificates.find {
+            val dgcEntry = it.covCertificate.dgcEntry
+            dgcEntry is Vaccination && dgcEntry.isBooster
         } ?: certificates.find {
             val dgcEntry = it.covCertificate.dgcEntry
             dgcEntry.type == VaccinationCertType.VACCINATION_FULL_PROTECTION

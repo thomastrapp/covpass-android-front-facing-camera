@@ -93,6 +93,28 @@ public data class CovCertificate(
         ).joinToString(", ")
     }
 
+    public val fullTransliteratedName: String by lazy {
+        if (!name.trimmedName.givenNameTransliterated.isNullOrEmpty()) {
+            listOfNotNull(
+                name.trimmedName.givenNameTransliterated,
+                name.trimmedName.familyNameTransliterated
+            ).joinToString(" ")
+        } else {
+            name.trimmedName.familyNameTransliterated
+        }
+    }
+
+    public val fullTransliteratedNameReverse: String by lazy {
+        if (!name.trimmedName.givenNameTransliterated.isNullOrEmpty()) {
+            listOfNotNull(
+                name.trimmedName.familyNameTransliterated,
+                name.trimmedName.givenNameTransliterated
+            ).joinToString(", ")
+        } else {
+            name.trimmedName.familyNameTransliterated
+        }
+    }
+
     public val validDate: LocalDate?
         get() = vaccination?.occurrence?.plusDays(15)
 
