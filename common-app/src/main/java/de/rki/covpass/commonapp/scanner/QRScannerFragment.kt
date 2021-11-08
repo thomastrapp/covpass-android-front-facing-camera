@@ -18,6 +18,7 @@ import com.google.zxing.ResultPoint
 import com.ibm.health.common.android.utils.viewBinding
 import com.ibm.health.common.navigation.android.findNavigator
 import com.journeyapps.barcodescanner.*
+import com.journeyapps.barcodescanner.camera.CameraSettings
 import de.rki.covpass.commonapp.BaseFragment
 import de.rki.covpass.commonapp.databinding.FragmentQrScannerBinding
 import de.rki.covpass.commonapp.utils.getScreenSize
@@ -69,6 +70,11 @@ public abstract class QRScannerFragment : BaseFragment() {
         decoratedBarcodeView.barcodeView.decoderFactory = DefaultDecoderFactory(barcodeTypes)
         val screenSize = requireContext().getScreenSize()
         decoratedBarcodeView.barcodeView.framingRectSize = Size(screenSize.x, screenSize.y)
+
+        var cameraSettings = CameraSettings()
+        cameraSettings.setRequestedCameraId(1)
+        decoratedBarcodeView.barcodeView.setCameraSettings(cameraSettings)
+
         binding.scannerCloseButton.setOnClickListener { requireActivity().onBackPressed() }
         checkPermission()
     }
