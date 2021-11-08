@@ -1,3 +1,15 @@
+# Fork of F-Droid's covpass that uses camera 1
+
+Source: https://gitlab.com/covpass-android-foss/covpass-android
+
+https://f-droid.org/de/packages/de.rki.covpass.app/
+
+Uses camera 1 by default, which most likely is the front facing camera:
+https://github.com/thomastrapp/covpass-android-front-facing-camera/commit/b163fd46458c91abbf8b1ee571562f076af3eadd
+
+
+Original readme:
+
 # FOSS version
 
 NB: it's not really a "fork", just a few patches for F-Droid, no other
